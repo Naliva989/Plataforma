@@ -32,24 +32,22 @@
         </nav>
 
         <div class="main-login">
-            <div class="left-login">
-                <h1>Faça login<br>e entre para o time</h1>
-                <img src="/Users/Show/Desktop/Coding/Projeto rápido portal/generating-new-leads-animate.svg" class="left-login--image" alt="tablet magnetico">
-            </div>
-            <div class="right-login">
-                <div class="card-login">
-                    <h1>Login</h1>
-                    <div class="text-field">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" placeholder="Usuário">
-                    </div>
-                    <div class="text-field">
-                        <label for="senha">Senha</label>
-                        <input type="password" name="senha" placeholder="Senha">
-                    </div>
-                    <button class="btn-login">Login</button>
+            <form>
+                <div class="form-field">
+                    <div><label>Email</label></div>
+                    <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
+                    <div class="error" id="email-required-error">Email é obrigatório</div>
+                    <div class="error" id="email-invalid-error">Email é inválido</div>
                 </div>
-            </div>
+                <div class="form-field">
+                    <div><label>Senha</label></div>
+                    <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
+                    <div class="error" id="password-required-error">Senha é obrigatória</div>
+                </div>
+                <div>
+                    <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Entrar</button>
+                </div>
+            </form>
         </div>
         <footer>
             <div class="container footer--container">
@@ -100,26 +98,28 @@
             </div>
         </footer>
 
-        <script src="./main.js"></script>
+        
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            //when window width >= 600px
-            breakpoints: {
-                600: {
-                    slidesPerView: 2
-                }
-            }
-            });
-        </script>
+        
         
     </body>
+    <script src="index.js"></script>
+    <script src="validations.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBWKg1vbNvn9ClO3y6M5sziH6OCVlJHrBY",
+                authDomain: "english-plataform.firebaseapp.com",
+                databaseURL: "https://english-plataform-default-rtdb.firebaseio.com",
+                projectId: "english-plataform",
+                storageBucket: "english-plataform.appspot.com",
+                messagingSenderId: "74125285424",
+                appId: "1:74125285424:web:8a0fb11f568aa2b75f35f5"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    
 </html>    

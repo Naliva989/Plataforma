@@ -121,6 +121,14 @@ a {
     font-size: 0.9rem;
     transition: var(--transition);
  }
+ .nav-menu a .login {
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background-color: #00ff88;
+    font-size: 0.9rem;
+    transition: var(--transition);
+ }
  .nav-menu a:hover {
     color: var(--color-bg2);
  }
@@ -605,6 +613,8 @@ footer {
 .left-login--image {
     width: 35vw;
 }
+
+
 .text-field {
     width: 100%;
     display: flex;

@@ -43,3 +43,55 @@ const closeNav = () => {
 }
 
 closeBtn.addEventListener('click', closeNav)
+
+
+function validateFields() {
+    const emailValid = isEmailValid();
+
+    const password = isPasswordValid();
+    document.getElementById("btnLogin").disabled = !emailValid || !passwordValid;
+
+    
+
+// login //
+
+
+}
+function isEmailValid() {
+    const email = document.getElementById("inputEmail").value
+    if (!email) {
+        return false;
+    }
+    return validateEmail(inputEmail);
+}
+
+function isPasswordValid() {
+    const password = document.getElementById("inputPassword").value
+    if (!password) {
+        return false;
+    }
+    return true;
+}
+
+function validateEmail(inputEmail) {
+    return /\S+@\S+\.\S+/.test(inputEmail);
+
+}
+
+function login() {
+    firebase.auth().signInWithEmailAndPassword("ilan.porto@gmail.com", "pororoca123!"
+            ).then(response =>{
+                console.log('success', response)
+                window.location.href = "cadastro.html";
+            })
+            .catch((error) => {
+                console.log('error', response)
+            });
+
+    
+}
+
+
+
+//----//
+

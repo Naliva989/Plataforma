@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Login</title>
+    </head>
+
+    <body>
+        <form>
+            <div class="form-field">
+                <div><label>Email</label></div>
+                <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
+                <div class="error" id="email-required-error">Email é obrigatório</div>
+                <div class="error" id="email-invalid-error">Email é inválido</div>
+            </div>
+            <div class="form-field">
+                <div><label>Senha</label></div>
+                <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
+                <div class="error" id="password-required-error">Senha é obrigatória</div>
+            </div>
+            <div>
+                <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
+            </div>
+            <div>
+                <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Entrar</button>
+            </div>
+            <div>
+                <button type="button" class="outline" onclick="register()">Registrar</button>
+            </div>
+        </form>
+    </body>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="global.css">
+
+    <script src="index.js"></script>
+    <script src="validations.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBWKg1vbNvn9ClO3y6M5sziH6OCVlJHrBY",
+                authDomain: "english-plataform.firebaseapp.com",
+                databaseURL: "https://english-plataform-default-rtdb.firebaseio.com",
+                projectId: "english-plataform",
+                storageBucket: "english-plataform.appspot.com",
+                messagingSenderId: "74125285424",
+                appId: "1:74125285424:web:8a0fb11f568aa2b75f35f5"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+</html>
